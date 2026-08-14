@@ -1,3 +1,11 @@
+const SUPABASE_URL = "https://dgjeowpksgwzldnwnvvl.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_O7IQlgPKBSi0cxVWZyIHkg_8xeWxrmH";
+
+const db = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
 let rating = 0;
 let tasteGood = null;
 let friendlyService = null;
