@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Café LA Listens</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header>
+      <h1>Café LA Listens</h1>
+      <p>Your opinion helps us serve you better.</p>
+    </header>
+
+    <section class="card">
+
+      <h2>How was your meal today?</h2>
+
+      <label for="school">Your School</label>
+      <select id="school">
+        <option value="">Choose your school</option>
+        <option>Carson High School</option>
+        <option>Banning High School</option>
+        <option>Example Middle School</option>
+      </select>
+
+      <label for="meal">What did you eat?</label>
+      <select id="meal">
+        <option value="">Choose your meal</option>
+        <option>Orange Chicken</option>
+        <option>Pizza</option>
+        <option>Chicken Sandwich</option>
+        <option>Salad</option>
+      </select>
+
+      <p class="question">How was it?</p>
+
+      <div class="stars" id="stars">
+        <button type="button" data-rating="1">★</button>
+        <button type="button" data-rating="2">★</button>
+        <button type="button" data-rating="3">★</button>
+        <button type="button" data-rating="4">★</button>
+        <button type="button" data-rating="5">★</button>
+      </div>
+
+      <p class="question">Food tasted good?</p>
+
+      <div class="choice">
+        <button type="button" id="tasteYes">👍 Yes</button>
+        <button type="button" id="tasteNo">👎 No</button>
+      </div>
+
+      <p class="question">Service was friendly?</p>
+
+      <div class="choice">
+        <button type="button" id="serviceYes">👍 Yes</button>
+        <button type="button" id="serviceNo">👎 No</button>
+      </div>
+
+      <label for="comment">
+        Anything you want us to know?
+        <span>(optional)</span>
+      </label>
+
+      <textarea
+        id="comment"
+        maxlength="250"
+        placeholder="Tell us about your meal..."
+      ></textarea>
+
+      <button id="submitButton" class="submit">
+        Submit Feedback
+      </button>
+
+      <div id="thankYou" class="thank-you hidden">
+        <h2>Thank you! 🎉</h2>
+        <p>Your feedback helps us serve you better.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
