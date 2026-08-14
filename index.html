@@ -1,133 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Café LA Listens</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café LA Listens</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <main class="container">
+      <header>
+        <h1>South Café LA Listens</h1>
+        <p>Your feedback helps us serve you better.</p>
+      </header>
 
-<main class="container">
+      <section class="card">
+        <h2>How was your cafeteria experience today?</h2>
 
-  <header>
-    <h1>Café LA Listens</h1>
-    <p>Your feedback helps us serve you better.</p>
-  </header>
+        <label for="school">Your School</label>
 
-  <section class="card">
+        <select id="school">
+          <option value="">Choose your school</option>
 
-    <h2>How was your cafeteria experience today?</h2>
+          <option>186th St El</option>
+          <option>232nd Pl El</option>
+          <option>Ambler El</option>
+          <option>Annalee El</option>
+          <option>Banning HS</option>
+          <option>Bonita El</option>
+          <option>Harry Bridges El</option>
+          <option>Broad El</option>
+          <option>Broadacres El</option>
+          <option>Carnegie MS</option>
+          <option>Caroldale LC</option>
+          <option>Carson El</option>
+          <option>Carson HS</option>
+          <option>Catskill El</option>
+          <option>Curtiss MS</option>
+          <option>De La Torre El</option>
+          <option>Del Amo El</option>
+          <option>Dolores El</option>
+          <option>Dominguez El</option>
+          <option>Fries El</option>
+          <option>Gardena El</option>
+          <option>Leapwood El</option>
+          <option>Rancho Dominguez Prep HS</option>
+          <option>Towne El</option>
+          <option>Van Deene El</option>
+          <option>White MS</option>
+          <option>Willenberg Special Ed</option>
+          <option>Wilmington Park El</option>
+        </select>
 
-    <label for="school">Your School</label>
-    <select id="school">
-      <option value="">Choose your school</option>
-      <option>Carson High School</option>
-      <option>Banning High School</option>
-      <option>Example Middle School</option>
-    </select>
+        <p class="question">Overall Experience</p>
 
+        <div class="stars" id="stars">
+          <button type="button" data-rating="1">★</button>
+          <button type="button" data-rating="2">★</button>
+          <button type="button" data-rating="3">★</button>
+          <button type="button" data-rating="4">★</button>
+          <button type="button" data-rating="5">★</button>
+        </div>
 
-    <p class="question">Overall Experience</p>
+        <p class="question">How was the food?</p>
 
-    <div class="stars" id="stars">
-      <button type="button" data-rating="1">★</button>
-      <button type="button" data-rating="2">★</button>
-      <button type="button" data-rating="3">★</button>
-      <button type="button" data-rating="4">★</button>
-      <button type="button" data-rating="5">★</button>
-    </div>
+        <div class="choice">
+          <button type="button" id="tasteYes">👍 Good</button>
+          <button type="button" id="tasteNo">👎 Needs Improvement</button>
+        </div>
 
+        <div id="foodReasons" class="reason-box hidden">
+          <p>What could we improve?</p>
 
-    <p class="question">How was the food?</p>
+          <div class="reason-options">
+            <button type="button" data-food-reason="Taste">Taste</button>
+            <button type="button" data-food-reason="Temperature">
+              Temperature
+            </button>
+            <button type="button" data-food-reason="Appearance">
+              Appearance
+            </button>
+            <button type="button" data-food-reason="Portion">Portion</button>
+            <button type="button" data-food-reason="More Choices">
+              More Choices
+            </button>
+            <button type="button" data-food-reason="Other">Other</button>
+          </div>
+        </div>
 
-    <div class="choice">
-      <button type="button" id="tasteYes">👍 Good</button>
-      <button type="button" id="tasteNo">👎 Needs Improvement</button>
-    </div>
+        <p class="question">How was the service?</p>
 
-    <div id="foodReasons" class="reason-box hidden">
+        <div class="choice">
+          <button type="button" id="serviceYes">👍 Good</button>
+          <button type="button" id="serviceNo">👎 Needs Improvement</button>
+        </div>
 
-      <p>What could we improve?</p>
+        <div id="serviceReasons" class="reason-box hidden">
+          <p>What could we improve?</p>
 
-      <div class="reason-options">
-        <button type="button" data-food-reason="Taste">Taste</button>
-        <button type="button" data-food-reason="Temperature">Temperature</button>
-        <button type="button" data-food-reason="Appearance">Appearance</button>
-        <button type="button" data-food-reason="Portion">Portion</button>
-        <button type="button" data-food-reason="More Choices">More Choices</button>
-        <button type="button" data-food-reason="Other">Other</button>
-      </div>
+          <div class="reason-options">
+            <button type="button" data-service-reason="Wait Too Long">
+              Wait Too Long
+            </button>
 
-    </div>
+            <button type="button" data-service-reason="Service Too Slow">
+              Service Too Slow
+            </button>
 
+            <button type="button" data-service-reason="Staff Not Friendly">
+              Staff Not Friendly
+            </button>
 
-    <p class="question">How was the service?</p>
+            <button type="button" data-service-reason="Food Not Available">
+              Food Not Available
+            </button>
 
-    <div class="choice">
-      <button type="button" id="serviceYes">👍 Good</button>
-      <button type="button" id="serviceNo">👎 Needs Improvement</button>
-    </div>
+            <button type="button" data-service-reason="Other">Other</button>
+          </div>
+        </div>
 
-    <div id="serviceReasons" class="reason-box hidden">
+        <label for="comment">
+          Anything else you'd like us to know?
+          <span>(optional)</span>
+        </label>
 
-      <p>What could we improve?</p>
+        <textarea
+          id="comment"
+          maxlength="250"
+          placeholder="Tell us about your experience..."
+        ></textarea>
 
-      <div class="reason-options">
-        <button type="button" data-service-reason="Wait Too Long">
-          Wait Too Long
-        </button>
+        <button id="submitButton" class="submit">Submit Feedback</button>
 
-        <button type="button" data-service-reason="Service Too Slow">
-          Service Too Slow
-        </button>
+        <div id="thankYou" class="thank-you hidden">
+          <h2>Thank you! 🎉</h2>
+          <p>Your feedback helps us improve your cafeteria experience.</p>
+        </div>
+      </section>
+    </main>
 
-        <button type="button" data-service-reason="Staff Not Friendly">
-          Staff Not Friendly
-        </button>
-
-        <button type="button" data-service-reason="Food Not Available">
-          Food Not Available
-        </button>
-
-        <button type="button" data-service-reason="Other">
-          Other
-        </button>
-      </div>
-
-    </div>
-
-
-    <label for="comment">
-      Anything else you'd like us to know?
-      <span>(optional)</span>
-    </label>
-
-    <textarea
-      id="comment"
-      maxlength="250"
-      placeholder="Tell us about your experience..."
-    ></textarea>
-
-
-    <button id="submitButton" class="submit">
-      Submit Feedback
-    </button>
-
-
-    <div id="thankYou" class="thank-you hidden">
-      <h2>Thank you! 🎉</h2>
-      <p>Your feedback helps us improve your cafeteria experience.</p>
-    </div>
-
-  </section>
-
-</main>
-
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="app.js"></script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
