@@ -6,6 +6,8 @@ const db = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
+
+
 let rating = 0;
 let tasteGood = null;
 let friendlyService = null;
@@ -17,7 +19,7 @@ const stars = document.querySelectorAll("#stars button");
 
 stars.forEach(star => {
 
-  .addEventListener("click", async () => {
+  star.addEventListener("click", () => {
 
     rating = Number(star.dataset.rating);
 
@@ -81,7 +83,7 @@ setupChoice(
 // SUBMISSION
 
 document.getElementById("submitButton")
-  .addEventListener("click", () => {
+  .addEventListener("click", async () => {
 
     const school =
       document.getElementById("school").value;
@@ -109,45 +111,38 @@ document.getElementById("submitButton")
     }
 
 
-    const feedback = {
+    const { error } = await db
+      .from("meal_feedback")
+      .insert([
+        {
+          school: school,
+          meal: meal,
+          rating: rating,
+          taste_good: tasteGood,
+          friendly_service: friendlyService,
+          comment: comment
+        }
+      ]);
 
-      school,
-      meal,
-      rating,
-      tasteGood,
-      friendlyService,
-      comment,
 
-      submitted:
-        new Date().toISOString()
+    if (error) {
 
-    };
+      console.error("Supabase error:", error);
 
+      alert(
+        "Sorry, your feedback could not be submitted."
+      );
 
-const { data, error } = await db
-  .from("meal_feedback")
-  .insert([
-    {
-      school: school,
-      meal: meal,
-      rating: rating,
-      taste_good: tasteGood,
-      friendly_service: friendlyService,
-      comment: comment
+      return;
     }
-  ]);
 
-if (error) {
-  console.error("Supabase error:", error);
-  alert("Sorry, your feedback could not be submitted.");
-  return;
-}
 
-console.log("Feedback saved!");
+    console.log("Feedback saved!");
 
 
     document.getElementById("submitButton")
       .style.display = "none";
+
 
     document.getElementById("thankYou")
       .classList.remove("hidden");
