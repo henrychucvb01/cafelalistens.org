@@ -17,7 +17,7 @@ const stars = document.querySelectorAll("#stars button");
 
 stars.forEach(star => {
 
-  star.addEventListener("click", () => {
+  .addEventListener("click", async () => {
 
     rating = Number(star.dataset.rating);
 
@@ -124,7 +124,26 @@ document.getElementById("submitButton")
     };
 
 
-    console.log(feedback);
+const { data, error } = await db
+  .from("meal_feedback")
+  .insert([
+    {
+      school: school,
+      meal: meal,
+      rating: rating,
+      taste_good: tasteGood,
+      friendly_service: friendlyService,
+      comment: comment
+    }
+  ]);
+
+if (error) {
+  console.error("Supabase error:", error);
+  alert("Sorry, your feedback could not be submitted.");
+  return;
+}
+
+console.log("Feedback saved!");
 
 
     document.getElementById("submitButton")
