@@ -3,89 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Café LA Listens</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <main class="container">
+<main class="container">
 
-    <header>
-      <h1>Café LA Listens</h1>
-      <p>Your opinion helps us serve you better.</p>
-    </header>
+  <header>
+    <h1>Café LA Listens</h1>
+    <p>Your feedback helps us serve you better.</p>
+  </header>
 
-    <section class="card">
+  <section class="card">
 
-      <h2>How was your meal today?</h2>
+    <h2>How was your cafeteria experience today?</h2>
 
-      <label for="school">Your School</label>
-      <select id="school">
-        <option value="">Choose your school</option>
-        <option>Carson High School</option>
-        <option>Banning High School</option>
-        <option>Example Middle School</option>
-      </select>
+    <label for="school">Your School</label>
+    <select id="school">
+      <option value="">Choose your school</option>
+      <option>Carson High School</option>
+      <option>Banning High School</option>
+      <option>Example Middle School</option>
+    </select>
 
-      <label for="meal">What did you eat?</label>
-      <select id="meal">
-        <option value="">Choose your meal</option>
-        <option>Orange Chicken</option>
-        <option>Pizza</option>
-        <option>Chicken Sandwich</option>
-        <option>Salad</option>
-      </select>
 
-      <p class="question">How was it?</p>
+    <p class="question">Overall Experience</p>
 
-      <div class="stars" id="stars">
-        <button type="button" data-rating="1">★</button>
-        <button type="button" data-rating="2">★</button>
-        <button type="button" data-rating="3">★</button>
-        <button type="button" data-rating="4">★</button>
-        <button type="button" data-rating="5">★</button>
+    <div class="stars" id="stars">
+      <button type="button" data-rating="1">★</button>
+      <button type="button" data-rating="2">★</button>
+      <button type="button" data-rating="3">★</button>
+      <button type="button" data-rating="4">★</button>
+      <button type="button" data-rating="5">★</button>
+    </div>
+
+
+    <p class="question">How was the food?</p>
+
+    <div class="choice">
+      <button type="button" id="tasteYes">👍 Good</button>
+      <button type="button" id="tasteNo">👎 Needs Improvement</button>
+    </div>
+
+    <div id="foodReasons" class="reason-box hidden">
+
+      <p>What could we improve?</p>
+
+      <div class="reason-options">
+        <button type="button" data-food-reason="Taste">Taste</button>
+        <button type="button" data-food-reason="Temperature">Temperature</button>
+        <button type="button" data-food-reason="Appearance">Appearance</button>
+        <button type="button" data-food-reason="Portion">Portion</button>
+        <button type="button" data-food-reason="More Choices">More Choices</button>
+        <button type="button" data-food-reason="Other">Other</button>
       </div>
 
-      <p class="question">Food tasted good?</p>
+    </div>
 
-      <div class="choice">
-        <button type="button" id="tasteYes">👍 Yes</button>
-        <button type="button" id="tasteNo">👎 No</button>
+
+    <p class="question">How was the service?</p>
+
+    <div class="choice">
+      <button type="button" id="serviceYes">👍 Good</button>
+      <button type="button" id="serviceNo">👎 Needs Improvement</button>
+    </div>
+
+    <div id="serviceReasons" class="reason-box hidden">
+
+      <p>What could we improve?</p>
+
+      <div class="reason-options">
+        <button type="button" data-service-reason="Wait Too Long">
+          Wait Too Long
+        </button>
+
+        <button type="button" data-service-reason="Service Too Slow">
+          Service Too Slow
+        </button>
+
+        <button type="button" data-service-reason="Staff Not Friendly">
+          Staff Not Friendly
+        </button>
+
+        <button type="button" data-service-reason="Food Not Available">
+          Food Not Available
+        </button>
+
+        <button type="button" data-service-reason="Other">
+          Other
+        </button>
       </div>
 
-      <p class="question">Service was friendly?</p>
+    </div>
 
-      <div class="choice">
-        <button type="button" id="serviceYes">👍 Yes</button>
-        <button type="button" id="serviceNo">👎 No</button>
-      </div>
 
-      <label for="comment">
-        Anything you want us to know?
-        <span>(optional)</span>
-      </label>
+    <label for="comment">
+      Anything else you'd like us to know?
+      <span>(optional)</span>
+    </label>
 
-      <textarea
-        id="comment"
-        maxlength="250"
-        placeholder="Tell us about your meal..."
-      ></textarea>
+    <textarea
+      id="comment"
+      maxlength="250"
+      placeholder="Tell us about your experience..."
+    ></textarea>
 
-      <button id="submitButton" class="submit">
-        Submit Feedback
-      </button>
 
-      <div id="thankYou" class="thank-you hidden">
-        <h2>Thank you! 🎉</h2>
-        <p>Your feedback helps us serve you better.</p>
-      </div>
+    <button id="submitButton" class="submit">
+      Submit Feedback
+    </button>
 
-    </section>
 
-  </main>
+    <div id="thankYou" class="thank-you hidden">
+      <h2>Thank you! 🎉</h2>
+      <p>Your feedback helps us improve your cafeteria experience.</p>
+    </div>
+
+  </section>
+
+</main>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js"></script>
