@@ -1,1 +1,133 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #14294a;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+header h1 {
+  margin-bottom: 5px;
+  font-size: 34px;
+}
+
+header p {
+  margin-top: 0;
+  color: #596b82;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+
+h2 {
+  text-align: center;
+}
+
+label,
+.question {
+  display: block;
+  font-weight: bold;
+  margin-top: 22px;
+  margin-bottom: 8px;
+}
+
+label span {
+  font-weight: normal;
+  color: #777;
+}
+
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccd5df;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.stars button {
+  border: none;
+  background: transparent;
+  font-size: 42px;
+  color: #d6d6d6;
+  cursor: pointer;
+}
+
+.stars button.active {
+  color: #ffb400;
+}
+
+.choice {
+  display: flex;
+  gap: 10px;
+}
+
+.choice button {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ccd5df;
+  border-radius: 10px;
+  background: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.choice button.selected {
+  background: #dff5e5;
+  border-color: #2f944b;
+}
+
+.submit {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #2f944b;
+  color: white;
+  padding: 16px;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.thank-you {
+  margin-top: 25px;
+  padding: 20px;
+  background: #eaf7ed;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
