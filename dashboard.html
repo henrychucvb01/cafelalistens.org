@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>South Café LA Listens</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- HEADER -->
+
+      <header>
+        <h1>South Café LA Listens</h1>
+
+        <p>Manager Dashboard</p>
+      </header>
+
+      <section class="card">
+        <div id="dashboardSection">
+          <h2>Feedback Dashboard</h2>
+
+          <!-- SCHOOL FILTER -->
+
+          <div class="school-section">
+            <h3>Select a School</h3>
+
+            <div id="schoolButtons" class="school-buttons"></div>
+          </div>
+
+          <!-- CURRENT SCHOOL -->
+
+          <div class="selected-school">
+            <span> Viewing </span>
+
+            <strong id="selectedSchoolName"> All Schools </strong>
+          </div>
+
+          <!-- STAT CARDS -->
+
+          <div class="dashboard-grid">
+            <div class="stat-card">
+              <span class="stat-icon"> 💬 </span>
+
+              <span class="stat-number" id="totalResponses"> -- </span>
+
+              <span class="stat-label"> Responses </span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon"> ⭐ </span>
+
+              <span class="stat-number" id="averageRating"> -- </span>
+
+              <span class="stat-label"> Overall Rating </span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon"> 🍴 </span>
+
+              <span class="stat-number" id="foodApproval"> -- </span>
+
+              <span class="stat-label"> Food Approval </span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon"> 😊 </span>
+
+              <span class="stat-number" id="serviceApproval"> -- </span>
+
+              <span class="stat-label"> Service Approval </span>
+            </div>
+          </div>
+
+          <!-- TREND GRAPH -->
+
+          <div class="dashboard-panel">
+            <h3>📈 Approval Trend</h3>
+
+            <div id="trendChart" class="trend-chart">Loading trend...</div>
+          </div>
+
+          <!-- FOOD ISSUES -->
+
+          <div class="dashboard-panel">
+            <h3>🍴 Food Needs Improvement</h3>
+
+            <div id="foodIssues">No feedback yet.</div>
+          </div>
+
+          <!-- SERVICE ISSUES -->
+
+          <div class="dashboard-panel">
+            <h3>😊 Service Needs Improvement</h3>
+
+            <div id="serviceIssues">No feedback yet.</div>
+          </div>
+
+          <!-- COMMENTS -->
+
+          <div class="dashboard-panel">
+            <h3>💬 Recent Comments</h3>
+
+            <div id="recentComments">No comments yet.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
